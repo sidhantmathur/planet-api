@@ -1,7 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 
-const Fav = require('../models/fav')
+const Fav = require('../models/favs')
 
 const customErrors = require('../../lib/custom_errors')
 
@@ -19,6 +19,23 @@ router.get('/favs', requireToken, (req, res, next) => {
       return favs.map(fav => fav.toObject())
     })
     .then(favs => res.status(200).json({ favs: favs }))
+    .catch(next)
+})
+
+router.get('/favs-user', requireToken, (req, res, next) => {
+  // console.log(req.user)
+  Fav.find({'owner': req.user.id})
+    .then(handle404)
+    .then(favs => {
+      return favs.map(fav => {
+        requireOwnership(req, fav)
+        return fav.toObject()
+      })
+    })
+    .then(favs => {
+    // console.log(favs)
+      res.status(200).json({ favs: favs })
+    })
     .catch(next)
 })
 
@@ -60,6 +77,12 @@ router.delete('/favs/:id', requireToken, (req, res, next) => {
       requireOwnership(req, fav)
       fav.deleteOne()
     })
+    .then(() => res.sendStatus(204))
+    .catch(next)
+})
+
+router.delete('/favs-del-all/', requireToken, (req, res, next) => {
+  Fav.deleteMany()
     .then(() => res.sendStatus(204))
     .catch(next)
 })

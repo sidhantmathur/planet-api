@@ -10,7 +10,7 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
     "fav": {
-      "text": "'"${TEXT}"'",
+      "title": "'"${TITLE}"'",
       "name": "'"${NAME}"'"
     }
   }'
