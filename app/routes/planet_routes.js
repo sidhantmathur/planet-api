@@ -38,7 +38,23 @@ router.get('/planets', (req, res, next) => {
 
 router.get('/planets-disc/:disc', (req, res, next) => {
   // console.log(req.user)
-  Planet.find({'discovered': req.params.disc})
+  Planet.find({'dis_year': req.params.disc})
+    .then(handle404)
+    .then(planets => {
+      return planets.map(planet => {
+        return planet.toObject()
+      })
+    })
+    .then(planets => {
+    // console.log(planets)
+      res.status(200).json({ planets: planets })
+    })
+    .catch(next)
+})
+
+router.get('/planets-row/:row', (req, res, next) => {
+  // console.log(req.user)
+  Planet.find({'row': req.params.row})
     .then(handle404)
     .then(planets => {
       return planets.map(planet => {

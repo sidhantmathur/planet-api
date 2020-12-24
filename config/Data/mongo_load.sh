@@ -10,4 +10,9 @@ mongoexport --db=planet-api-development --collection=planets --type=csv --fields
 # commands to quickly export and import planet data
 
 # cluster0-shard-00-01.vngyp.mongodb.net:27017
-$ mongoimport --host=cluster0-shard-00-01.vngyp.mongodb.net:27017 --db planet-api --collection=planets --type=csv --headerline --drop --file=/Users/sidhantmathur/projects/planetsExport.csv --authenticationDatabase admin --ssl --username <usernamehere> --password <passwordhere>
+mongoimport --host=cluster0-shard-00-01.vngyp.mongodb.net:27017 --db planet-api --collection=planets --type=csv --headerline --drop --file=/Users/sidhantmathur/projects/planetsExport.csv --authenticationDatabase admin --ssl --username <usernamehere> --password <passwordhere>
+
+
+mongoexport --uri mongodb+srv://admin:<PASSWORD>@cluster0.vngyp.mongodb.net/<DATABASE> --collection <COLLECTION> --type <FILETYPE> --out <FILENAME>
+
+mongoimport --uri mongodb+srv://admin:<PASSWORD>@cluster0.vngyp.mongodb.net/<DATABASE> --collection <COLLECTION> --type <FILETYPE> --file <FILENAME>
