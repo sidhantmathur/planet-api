@@ -29,12 +29,6 @@ The way to get information about all discovered exo-planets
 
 ## Technologies Used
 
-### Front-End
-
-- React
-- HTML/CSS/Javascript
-- Bootstrap
-
 ### Back-End
 
 - Node.js
@@ -43,6 +37,13 @@ The way to get information about all discovered exo-planets
 - Mongoose
 - MongoDB Atlas
 - Heroku
+
+### Front-End
+
+- React
+- HTML/CSS/Javascript
+- Bootstrap
+- Chakra-UI
 
 ## Future Development
 
