@@ -4,9 +4,10 @@ The way to get information about all discovered exo-planets
 
 ## Important Links
 
-- [Hosted Site](https://sidhantmathur.github.io/issue-tracker-client/)
-- [API Repo](https://github.com/sidhantmathur/issue-api)
-- [Heroku Hosted API](https://afternoon-beach-76578.herokuapp.com/)
+- [Hosted Site](https://sidhantmathur.github.io/exo-planetarium/#/)
+- [Client Repo](https://github.com/sidhantmathur/exo-planetarium)
+- [Heroku Hosted API](https://gentle-wave-86032.herokuapp.com/)
+- [Data Source](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PSCompPars)
 
 ## User Stories
 
@@ -51,7 +52,7 @@ The way to get information about all discovered exo-planets
 
 ## Wireframe and More
 
-[Planning Wireframe & ERD](https://imgur.com/a/sqmwFmF)
+[Planning Wireframe & ERD](https://imgur.com/LaDhYRF)
 
 ### Routes
 
